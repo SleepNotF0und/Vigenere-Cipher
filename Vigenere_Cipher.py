@@ -1,7 +1,8 @@
 while True:
-    ch =int(input("Press 1 for Encrypt || Press 2 for Decrypt\n>>"))
+    ch =int(input("Press 1 for Encrypt || Press 2 for Decrypt\n>>>"))
     if ch == 1:
         text = input("Text:").lower() #.replace(' ','_')
+        print("!!! THE KEY MUST BE CHARACTERS !!!\n")
         key = input("Key:")
 
         if len(text) > len(key):
@@ -14,10 +15,9 @@ while True:
             else:
                 Vigenere.append(chr(ord(tx) + ord(k)))
 
-        Vigeneree="".join(Vigenere)
         print("\n=======================================")
         print("           !!! Encrypted !!!             ")
-        print("Text:",Vigeneree,end="")
+        print("".join(Vigenere))
         print("\n=======================================\n")
 
     elif ch == 2:
@@ -34,8 +34,7 @@ while True:
             else:
                 Vigenere.append(chr(ord(tx) - ord(k)))
 
-        Vigeneree="".join(Vigenere)
         print("\n=======================================")
         print("           !!! Decrypted !!!             ")
-        print("Text:",Vigeneree,end="")
+        print("".join(Vigenere))
         print("\n=======================================\n")
